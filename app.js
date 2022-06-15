@@ -4,7 +4,7 @@ document.querySelector('.file').addEventListener('input', function () {
         reader.readAsText(file);
         reader.onload = () => {
             let numberArr = reader.result.split(/\r?\n/); 
-            console.log(numberArr);
+            //console.log(numberArr);
             document.querySelector('.block_upload i').style.display = 'block';
             document.querySelector('.max').addEventListener('click', () => {
                 maxValue(numberArr);
@@ -46,7 +46,7 @@ const maxValue = (arr) => {
         number > max ? max = number : '';
     }
     //console.log('Max = ', max);
-    document.querySelector('.max_value').innerHTML = `Max = ${max}`;
+    document.querySelector('.max_value').innerHTML = `Max val = ${max}`;
 
 };
 
@@ -57,7 +57,7 @@ const minValue = (arr) => {
         number < min ? min = number : '';
     }
     //console.log('Min = ', min); 
-    document.querySelector('.min_value').innerHTML = `Min = ${min}`;
+    document.querySelector('.min_value').innerHTML = `Min val = ${min}`;
     
 };
 
@@ -67,16 +67,16 @@ const averageValue = (arr) => {
        sum += Number(arr[k]);
     }
     let average = sum/arr.length;
-    document.querySelector('.average_value').innerHTML = `Average = ${average}`;
+    document.querySelector('.average_value').innerHTML = `Average val = ${average}`;
 };
 
 const medianValue = (arr) => {
     let mid = Math.round(arr.length/2);
     //console.log(mid);
     arr.length%2 == 0 ? (median = (Number(arr[mid]) + Number(arr[mid-1]))/2, 
-    document.querySelector('.median_value').innerHTML = `Median = ${median}`) : 
+    document.querySelector('.median_value').innerHTML = `Median val = ${median}`) : 
     (median = Number(arr[mid-1]), 
-    document.querySelector('.median_value').innerHTML = `Median = ${median}`);
+    document.querySelector('.median_value').innerHTML = `Median val = ${median}`);
 };
     
 const maxSequence = (arr) => {
@@ -93,7 +93,7 @@ const maxSequence = (arr) => {
 
     } 
     //console.log(resSequence);
-    document.querySelector('.max_seqience--result').innerHTML = `Max Sequence = ${resSequence}`;
+    document.querySelector('.max_seqience--result').innerHTML = `Max Growing Sequence = ${resSequence}`;
 }
 
 const minSequence = (arr) => {
@@ -110,7 +110,7 @@ const minSequence = (arr) => {
 
     }
     //console.log(resSequence);
-    document.querySelector('.min_seqience--result').innerHTML = `Min Sequence = ${resSequence}`;
+    document.querySelector('.min_seqience--result').innerHTML = `Max Decreasing Sequence = ${resSequence}`;
 }
 
 
