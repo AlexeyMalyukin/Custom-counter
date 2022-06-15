@@ -6,31 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/589badcd7e.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
 <div class="block">
-    <input type="file" class="file">
+    <div class="block_title">Custom Counter</div>
+
+    <label class="block_upload">
+        Upload your TXT file <i class="fa-solid fa-check"></i>
+        <input type="file" class="file">
+        
+    </label>
 
 
-    <button class="max">Max value</button>
-    <div class="max_value"></div>
+    <div class="block_item">
+        <button class="max" id="count">Max value</button>
+        <div class="max_value" id="result"></div>
+    </div>
 
-    <button class="min">Min value</button>
-    <div class="min_value"></div>
+    <div class="block_item">
+        <button class="min" id="count">Min value</button>
+        <div class="min_value" id="result"></div>
+    </div>
 
+    <div class="block_item">
+        <button class="average" id="count">Average value</button>
+        <div class="average_value" id="result"></div>
+    </div>
 
-    <button class="average">Average value</button>
-    <div class="average_value"></div>
+    <div class="block_item">
+        <button class="median" id="count">Median</button>
+        <div class="median_value" id="result"></div>
+    </div>
 
-    <button class="median">Median</button>
-    <div class="median_value"></div>
+    <div class="block_item">
+        <button class="max_sequence" id="count">Max sequense</button>
+        <div class="max_seqience--result" id="result"></div>
+    </div>
 
-    <button class="max_sequence">Max sequense</button>
-    <div class="max_seqience--result"></div>
+    <div class="block_item">
+        <button class="min_sequence" id="count">Min sequence</button>
+        <div class="min_seqience--result" id="result"></div>
+    </div>
 
-    <button class="min_sequence">Min sequence</button>
-    <div class="min_seqience--result"></div>
 </div>
 
 

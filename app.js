@@ -5,6 +5,7 @@ document.querySelector('.file').addEventListener('input', function () {
         reader.onload = () => {
             let numberArr = reader.result.split(/\r?\n/); 
             console.log(numberArr);
+            document.querySelector('.block_upload i').style.display = 'block';
             document.querySelector('.max').addEventListener('click', () => {
                 maxValue(numberArr);
             });
@@ -39,9 +40,9 @@ document.querySelector('.file').addEventListener('input', function () {
 
 
 const maxValue = (arr) => {
-    let max = arr[0];
+    let max = Number(arr[0]);
     for(let i=1; i < arr.length; i++) {
-        let number = parseInt(arr[i]);
+        let number = Number(arr[i]);
         number > max ? max = number : '';
     }
     //console.log('Max = ', max);
@@ -50,9 +51,9 @@ const maxValue = (arr) => {
 };
 
 const minValue = (arr) => {
-    let min = arr[0];
+    let min = Number(arr[0]);
     for(let n=1; n < arr.length; n++) {
-        let number = parseInt(arr[n]);
+        let number = Number(arr[n]);
         number < min ? min = number : '';
     }
     //console.log('Min = ', min); 
@@ -61,33 +62,32 @@ const minValue = (arr) => {
 };
 
 const averageValue = (arr) => {
-    let sum = parseInt(arr[0]);
-    for(let k=1; k < arr.length; k++) {
-       sum += parseInt(arr[k]);
+    let sum = Number(arr[0]);
+    for(let k=0; k < arr.length; k++) {
+       sum += Number(arr[k]);
     }
     let average = sum/arr.length;
-    //console.log('Avarage = ', avarage);
-    document.querySelector('.average_value').innerHTML = `Avarage = ${average}`;
+    document.querySelector('.average_value').innerHTML = `Average = ${average}`;
 };
 
 const medianValue = (arr) => {
     let mid = Math.round(arr.length/2);
     //console.log(mid);
-    arr.length%2 == 0 ? (median = (parseInt(arr[mid]) + parseInt(arr[mid-1]))/2, 
+    arr.length%2 == 0 ? (median = (Number(arr[mid]) + Number(arr[mid-1]))/2, 
     document.querySelector('.median_value').innerHTML = `Median = ${median}`) : 
-    (median = parseInt(arr[mid-1]), 
+    (median = Number(arr[mid-1]), 
     document.querySelector('.median_value').innerHTML = `Median = ${median}`);
 };
     
 const maxSequence = (arr) => {
-    let tempSequence = [parseInt(arr[0])];
-    let resSequence = [parseInt(arr[0])];
+    let tempSequence = [Number(arr[0])];
+    let resSequence = [Number(arr[0])];
     for(let i=1; i < arr.length; i++) {
-        parseInt(arr[i]) > parseInt(arr[i-1]) ? 
-        tempSequence.push(parseInt(arr[i])) 
+        Number(arr[i]) > Number(arr[i-1]) ? 
+        tempSequence.push(Number(arr[i])) 
         : ((tempSequence.length > resSequence.length ?
         resSequence = tempSequence : ''), 
-        tempSequence = [parseInt(arr[i])]);
+        tempSequence = [Number(arr[i])]);
 
         tempSequence.length > resSequence.length ? resSequence = tempSequence : '';
 
@@ -97,14 +97,14 @@ const maxSequence = (arr) => {
 }
 
 const minSequence = (arr) => {
-    let tempSequence = [parseInt(arr[0])];
-    let resSequence = [parseInt(arr[0])];
+    let tempSequence = [Number(arr[0])];
+    let resSequence = [Number(arr[0])];
     for(let i=1; i < arr.length; i++) {
-        parseInt(arr[i]) < parseInt(arr[i-1]) ? 
-        tempSequence.push(parseInt(arr[i])) 
+        Number(arr[i]) < Number(arr[i-1]) ? 
+        tempSequence.push(Number(arr[i])) 
         : ((tempSequence.length > resSequence.length ?
         resSequence = tempSequence : ''), 
-        tempSequence = [parseInt(arr[i])]);
+        tempSequence = [Number(arr[i])]);
 
         tempSequence.length > resSequence.length ? resSequence = tempSequence : '';
 
