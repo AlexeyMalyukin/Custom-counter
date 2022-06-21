@@ -63,7 +63,7 @@ const minValue = (arr) => {
 
 const averageValue = (arr) => {
     let sum = Number(arr[0]);
-    for(let k=0; k < arr.length; k++) {
+    for(let k=1; k < arr.length; k++) {
        sum += Number(arr[k]);
     }
     let average = sum/arr.length;
